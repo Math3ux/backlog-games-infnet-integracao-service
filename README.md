@@ -29,4 +29,9 @@ A interface interativa do Swagger contendo os endpoints expostos por este servi�
 * Adicionado suporte a perfis de execução (`dev` e `prod`) e externalização da URL da CheapShark via variável de ambiente (`CHEAPSHARK_API_URL`).
 * Integração com o **Spring Cloud Config Server** (`spring-cloud-starter-config`).
 * Adicionado `Dockerfile` com *multi-stage build* (Java 21) para orquestração via Docker Compose.
- 
+
+---
+
+## Etapa 4: Consumidor de Eventos Assíncronos (RabbitMQ)
+* Adicionada dependência `spring-boot-starter-amqp` e configuração da fila `jogo.cadastrado.queue`.
+* Implementado o listener `JogoEventConsumer` (`@RabbitListener`) para processamento assíncrono dos eventos de novos jogos publicados pela aplicação principal.
